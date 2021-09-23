@@ -32,7 +32,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 
-public class CCarCrash extends JFrame implements ActionListener,ChangeListener {
+public class CCarCrash2 extends JFrame implements ActionListener,ChangeListener {
 
 	private JPanel middle, right, bottom, right1, right2, right3,right4,right5,right6;
 	private JButton arrows[] = new JButton[9];
@@ -129,17 +129,18 @@ public class CCarCrash extends JFrame implements ActionListener,ChangeListener {
      
 	public static void main(String[] args) {
 
-		CCarCrash main = new CCarCrash(); //Creating a instance of the class
+		CCarCrash2 main = new CCarCrash2(); //Creating a instance of the class
 		main.setSize(810, 650); //Setting the size of the window
 		main.creategui(); //Calling the creategui method that then calls all the draw methods to draw the all of the panels and objects on the screen.
 		main.setResizable(false); //Stops the window being resized either by the full screen button or dragging the sides out. 
 		main.setLocationRelativeTo(null); //This sets the window to opeing in the center of the screen.
 		main.setVisible(true); //Make the application visable
-		main.setTitle("CCarCrash Car Race Application"); //Sets the title of the application window.
-		main.setIconImage(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/greenfoot.png"))); //Sets the icon image for the top left hand corner as well as the one on the task bar.
+		main.setTitle("CCarCrash – Car Race Application"); //Sets the title of the application window.
+		main.setIconImage(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/greenfoot.png"))); //Sets the icon image for the top left hand corner as well as the one on the task bar.
 		
 	}
 
+	
 	public void creategui() {
 
 		// Create default things
@@ -175,19 +176,19 @@ public class CCarCrash extends JFrame implements ActionListener,ChangeListener {
 		iconwallbottomright = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/wall-SE.png")));
 		careast = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/cartest.png")));
 		cartestcrash = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/cartestcrash.png")));
-		iconact = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/step.png")));
-		iconrun = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/run.png")));
-		iconreset = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/reset.png")));
-		compaseast = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/east.jpg")));
-		compasnorth = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/north.jpg")));
-		compassouth = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/south.jpg")));
-		compaswest = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/west.jpg")));
-		carnorth = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/carnorth.png")));
-		carsouth = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/carsouth.png")));
-		carwest = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/carwest.png")));
-		iconpause = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/pause.png")));
-		person = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/person.png")));
-		iconfinish = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash.class.getResource("images/sandstone.jpg")));
+		iconact = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/step.png")));
+		iconrun = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/run.png")));
+		iconreset = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/reset.png")));
+		compaseast = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/east.jpg")));
+		compasnorth = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/north.jpg")));
+		compassouth = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/south.jpg")));
+		compaswest = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/west.jpg")));
+		carnorth = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/carnorth.png")));
+		carsouth = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/carsouth.png")));
+		carwest = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/carwest.png")));
+		iconpause = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/pause.png")));
+		person = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/person.png")));
+		iconfinish = new ImageIcon(Toolkit.getDefaultToolkit().createImage(CCarCrash2.class.getResource("images/sandstone.jpg")));
 	}
 	
 	
@@ -284,10 +285,10 @@ public class CCarCrash extends JFrame implements ActionListener,ChangeListener {
 	int up = 0;	
 	for (int row = 0; row < array.length; row++) {
 	            for (int col = 0; col < array[0].length; col++) {
+	            	up++;
 	              background[row][col] = new JButton(""+up);
 	              background[row][col].setText(""+up);
 	              background[row][col].setBorderPainted(false);
-	              up++;
 	              switch (array[row][col]) { //Switch statment to tell it which objects to place according to the 2d array we pass to it so for example 1 is a horizontal wall.
 	            	 
 	            	case 1 : background[row][col].setIcon(iconwallhoriz);
@@ -315,7 +316,7 @@ public class CCarCrash extends JFrame implements ActionListener,ChangeListener {
 		}
 	}
 	
-public String squareAuto () { //This method returns a string which is used to show what square the car is driving over this method does this when the car is being driven on from the run or act button also sets the direction the car is facing depening on what the last square that the car was on.
+public String squareAuto () { //This method returns a string which is used to show what square the car is driving over this method does this when the car is being driven on from the run or act button.
 		int pathX = route.get(pathIndex);
         int pathY = route.get(pathIndex + 1);
 		String var = background[pathY][pathX].getText();
@@ -356,9 +357,9 @@ public String squareAuto () { //This method returns a string which is used to sh
 	
 	public String squareManual() { //this method does the same as above but only when the manual buttons are pressed.
 		String var = "";
-		for (int row = 0; row < whatarray().length; row++) {
-            for (int col = 0; col < whatarray()[0].length; col++) {
-            	if(whatarray()[row][col] == 10) {
+		for (int row = 0; row < option1.length; row++) {
+            for (int col = 0; col < option1[0].length; col++) {
+            	if(option1[row][col] == 10) {
             		var = background[row][col].getText();
             	
             	}
@@ -678,7 +679,7 @@ public String squareAuto () { //This method returns a string which is used to sh
 				for (int i = 0; i < 9; i++) {
 					arrows[i] = new JButton("" + i);
 					switch(i) {
-					case 1: arrows[i].setText("∧");
+					case 1: arrows[i].setText("Λ");
 							arrows[i].setBackground(Color.white);
 							arrows[i].setBorder(gaps3);
 							moveup = arrows[i];
@@ -774,7 +775,7 @@ public String squareAuto () { //This method returns a string which is used to sh
 			}
 		}
 
-		else if (nDirection == MOVE_LEFT) { //Same as above but for moving left
+		else if (nDirection == MOVE_LEFT) {
 			auto = false;
 			dirset(false, false, false, true);
 			direction();
@@ -824,7 +825,7 @@ public String squareAuto () { //This method returns a string which is used to sh
 				}
 			}
 		}
-		if (nDirection == MOVE_UP) {//Same as above but for moving up
+		if (nDirection == MOVE_UP) {
 			auto = false;
 			dirset(true, false, false, false);
 			direction();
@@ -871,7 +872,7 @@ public String squareAuto () { //This method returns a string which is used to sh
 				}
 			}
 		}
-		if (nDirection == MOVE_DOWN) { //Same as above but for moving down
+		if (nDirection == MOVE_DOWN) {
 			dirset(false, false, true, false);
 			direction();
 			auto = false;
@@ -918,89 +919,89 @@ public String squareAuto () { //This method returns a string which is used to sh
 
 	}
 		
-	private void driveCar() { //The method that completes the assignment 
-		squarefield.setText(squareAuto()); //sets the current square in the square text area
-		paintcar(); //paints the car
-		next(); //Moves the focus to the next variable in the pathfinding array
+	private void driveCar() {
 		squarefield.setText(squareAuto());
 		paintcar();
-		prev(); //Selects the previous value in the pathfinding array
+		next();
+		squarefield.setText(squareAuto());
+		paintcar();
+		prev();
 		paintbackground();
 		next();
 		squarefield.setText(squareAuto());
-		if (squareAuto().equals(""+finish)) { //If the square == to the finishing square
-			run.setIcon(iconrun); //Set the run icon back to run and the text
+		if (squareAuto().equals(""+finish)) {
+			run.setIcon(iconrun);
 			run.setText("Run");
-			delay.stop(); //Stop the timer that runs this method
-			stopwatch.stop(); //Stops the digital timer going up anymore
-			play = true; //sets the variable play to true
-			endgame(true); //Ends the game
-			messageBox("You Have Won Hit Restart to Play Again"); //Brings up a message box saying you have won
+			delay.stop();
+			stopwatch.stop();
+			play = true;
+			endgame(true);
+			messageBox("You Have Won Hit Restart to Play Again");
 		}
 	}
 	
-	public void endgame(Boolean x) { //End game method
+	public void endgame(Boolean x) {
 		
-		if (x == true) { //If the variable that is passed to it is true
+		if (x == true) {
 		for (int i = 0; i < arrows.length; i ++) {
-			arrows[i].setEnabled(false); //Disable all the arrows
+			arrows[i].setEnabled(false);
 		}
 		run.setEnabled(false);
-		act.setEnabled(false); //Disables the rest of the buttons that are not the reset button
+		act.setEnabled(false);
 		optionbutton1.setEnabled(false);
 		optionbutton2.setEnabled(false);
 		optionbutton3.setEnabled(false);
 		}
 		
-		else if (x == false) { //Else if the variable that is passed = false adds all the buttons back
+		else if (x == false) {
 			for (int i = 0; i < arrows.length; i ++) {
-				right2.removeAll(); //Removes all the buttons of the arrow key buttons
+				right2.removeAll();
 			}
-			optionbutton1.setEnabled(true); //Reenables all the buttons that have been disabled
+			optionbutton1.setEnabled(true);
 			optionbutton2.setEnabled(true);
 			optionbutton3.setEnabled(true);
 			run.setEnabled(true);
 			act.setEnabled(true);
-			drawDirectionArrows(); //Redraws the directional arrows
+			drawDirectionArrows();
 			right2.revalidate();
-			right2.repaint(); //Repaints the right2 panel that hold the directional arrows
+			right2.repaint();
 		}
 		
 	}
 	
-	public void run() { //The method that is ran when the run button is pressed
-		auto = true; //Sets auto to true telling the game that the pathfinding algorithm will be determing the path not the player
+	public void run() {
+		auto = true;
 		if (play == true && first == 0) {
-		setup(array); //RUns the pathfinding algorthim 
-		run.setIcon(iconpause); //sets the icon to the pause icon and the text
+		setup(array);
+		run.setIcon(iconpause);
 		run.setText("Pause");
-		delay.start(); //Starts the timer that runs the drive car method
-		stopwatch.start(); //Start the digital timer that ticks up every second
+		delay.start();
+		stopwatch.start();
 		play = false;
-		first ++; //adds one to the first variable 
+		first ++;
 		}
-		else if (play == true && first == 1) { //If first is == 1 then the run button has already been pressed before so no need to rerun the pathfinding algortithm
-			run.setIcon(iconpause); 
+		else if (play == true && first == 1) {
+			run.setIcon(iconpause);
 			run.setText("Pause");
 			delay.start();
 			stopwatch.start();
 			play = false;
 		}
-		else if (play == false) { //If the pause button is pressed
-			run.setIcon(iconrun); //Set the button to have the run icon and text
-			run.setText("Run"); 
-			delay.stop(); //Stop the timer that is running the driveCar method
-			stopwatch.stop(); //Stop the digital timer
-			play = true; //Set play to true
+		else if (play == false) {
+			run.setIcon(iconrun);
+			run.setText("Run");
+			delay.stop();
+			stopwatch.stop();
+			play = true;
 		}
 	}
 
 	
-	private void act() { //Method is ran when the act button is pressed
+	private void act() {
 		auto = true;
 		if (first == 0) {
-		setup(array); //Runs the pathfinding algorithm
-		driveCar(); //Run the drive car method
+		setup(array);
+		driveCar();
 		first ++;
 		}
 		else if (first == 1) {
@@ -1009,10 +1010,10 @@ public String squareAuto () { //This method returns a string which is used to sh
 	}
 	
 	
-	private void reset(int[][] array) { //When the reset button is pressed will set everything back to default
-		endgame(false); //Sets endgame to false reactivating all the buttons
+	private void reset(int[][] array) {
+		endgame(false);
 		r = false;
-		if (auto == true) { 
+		if (auto == true) {
 			paintbackground();
 			setup(array);
 			paintcar();
@@ -1035,7 +1036,7 @@ public String squareAuto () { //This method returns a string which is used to sh
 	            		}
 	            	}
 	            }
-			squarefield.setText("18"); //Sets all the values back to there default state
+			squarefield.setText("18");
 			background[1][1].setIcon(careast);
 			route.clear();
 			hours.setText("00");
@@ -1045,7 +1046,7 @@ public String squareAuto () { //This method returns a string which is used to sh
 			compas.setIcon(compaseast);
 			r = false;
 		
-		if(whatarray() == option3 && r == false) {//Resets track three all generates new amount and location of obsticals
+		if(whatarray() == option3 && r == false) {//TODO clean up
 			o1 = false;
 			o2 = false;
 			o3 = true;
@@ -1059,10 +1060,10 @@ public String squareAuto () { //This method returns a string which is used to sh
 			middle.repaint();
 			optionfield.setText("Option 3");
 			background[1][1].setIcon(careast);
-			finish = 83; //Sets the finishing square
+			finish = 83;
 		}
 		if (whatarray() == option1) {
-			background[11][1].setIcon(iconfinish); //Sets the finishing square 
+			background[11][1].setIcon(iconfinish);
 			middle.revalidate();
 			middle.repaint();
 		}
@@ -1086,21 +1087,21 @@ public String squareAuto () { //This method returns a string which is used to sh
 	//https://www.youtube.com/watch?v=dyrvXiMumXc
 	//https://en.wikipedia.org/wiki/Depth-first_search
 	
-	 private boolean PathFinder(int[][] option, int x, int y, ArrayList<Integer> route) { //Uses Recursive method to generate a path that we use to drive the car through the maze
+	 private boolean PathFinder(int[][] option, int x, int y, ArrayList<Integer> route) {
 
-	        if (option[y][x] == 9) { //if the square is equal to 9 (our finishing square) add it to the path then stop the running the method
+	        if (option[y][x] == 9) {
 	        	route.add(x);
 	        	route.add(y);
 	            return true;
 	        }
 	        
-	        if (option[y][x] == 0) { //If the button/square is equal to 0 set it equal to 7 to show we have visited it 
+	        if (option[y][x] == 0) {
 	            option[y][x] = 7;
 	            
 	           
 	          
 	            //RIGHT
-	            if (PathFinder(option, x, y + 1, route)) { //Runs the method again with 1 added to the y so this would be one square down it does the same in all directions till no path is found or we get to the end square (that equals 9) 
+	            if (PathFinder(option, x, y + 1, route)) {
 	            	route.add(x);
 	            	route.add(y);
 	                return true;
@@ -1131,18 +1132,18 @@ public String squareAuto () { //This method returns a string which is used to sh
 	          
 	        }
 	        
-	        return false; //Stops running if no path is found
+	        return false;
 	        
 	 }
 	
-	public void setup(int[][] option) { //Runs to generate the pathfinding algorithm
-		option[1][1] = 0; //Sets the first square where the car shows to 0 so the pathfinding algorithm does not just error out straight away
-		PathFinder(option, 1, 1, route); //Run the pathfining method and pass the array we are using then the starting coords and then the empty array we will add the path to.
+	public void setup(int[][] option) {
+		option[1][1] = 0;
+		PathFinder(option, 1, 1, route);
 		pathIndex = route.size() - 2;
 	}
 	
-	
-	public void paintcar() { //Paints the car on the selected button
+	//TODO CLEAN UP THESE TWO PAINT Methods
+	public void paintcar() {
 		int pathX = route.get(pathIndex);
         int pathY = route.get(pathIndex + 1);
         background[pathY][pathX].setIcon(careast);
@@ -1150,7 +1151,7 @@ public String squareAuto () { //This method returns a string which is used to sh
 		middle.repaint();
 	}
 	
-	public void paintbackground() { //Paints the background on the selected button
+	public void paintbackground() {
 		int pathX = route.get(pathIndex);
         int pathY = route.get(pathIndex + 1);
 		background[pathY][pathX].setIcon(iconBackground);
@@ -1158,22 +1159,23 @@ public String squareAuto () { //This method returns a string which is used to sh
 		middle.repaint();
 	}
 	
-	public void next() { //Selects the next value in the pathfinding array
+	public void next() {
 		pathIndex -= 2;
         if (pathIndex < 0) {
             pathIndex = 0;
         }
 	}
 	
-	public void prev() { //Selects the Previous value in the pathfinding array
+	public void prev() {
 		pathIndex += 2;
         if (pathIndex > route.size() - 2) {
             pathIndex = route.size() - 2;
         }	
 	}
 	
-	public void actionPerformed(ActionEvent event) { //Checks to see if one of the buttons has been pressed if it has runs the appropriate method
+	public void actionPerformed(ActionEvent event) {
 	
+		//TODO DONT think i really need these here can all be delcaerd at the same time
 		
 		
 		if (event.getSource() == stopwatch) {
@@ -1181,7 +1183,7 @@ public String squareAuto () { //This method returns a string which is used to sh
 		}
 		
 		
-		if (event.getSource() == optionbutton1) { //Checks to see if the optionbutton1 has been pressed if so runs the drawoption1 method
+		if (event.getSource() == optionbutton1) {
 			drawoption1();
 		}
 		
@@ -1194,7 +1196,7 @@ public String squareAuto () { //This method returns a string which is used to sh
 		}
 		
 		if (event.getSource() == exit) {
-			System.exit(EXIT_ON_CLOSE); //When the exit button is pressed run System.exit that closes the application
+			System.exit(EXIT_ON_CLOSE);
 		}
 		if (event.getSource() == moveright) {
 			
@@ -1250,10 +1252,11 @@ public String squareAuto () { //This method returns a string which is used to sh
 			System.exit(EXIT_ON_CLOSE);
 		}
 		if (event.getSource() == helptopicMenuItem) {
-			URI web = URI.create("https://www.greenfoot.org/doc"); //When the helptopicMenuitem is pressed (in the top bar) opens the greenfoot.org webpage
+			URI web = URI.create("https://www.greenfoot.org/doc");
 			try {
 				java.awt.Desktop.getDesktop().browse(web);
 			} catch (IOException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -1264,16 +1267,17 @@ public String squareAuto () { //This method returns a string which is used to sh
 			try {
 				java.awt.Desktop.getDesktop().browse(web);
 			} catch (IOException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}
 
 
-	public void stateChanged(ChangeEvent event) { //Detects if you move the slider
+	public void stateChanged(ChangeEvent event) {
 		if (event.getSource() == slider) {
 			int num = slider.getValue();
-			delay.setDelay(num); //Sets a new delay if the slider changes value
+			delay.setDelay(num);
 		}
 		
 	}
