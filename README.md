@@ -1,4 +1,4 @@
-# Greenfoot Java Game Clone With Pathfinding algorithm 
+# Java Game using only the Swing GUI library with pathfinding algorthim
 
 
 ### Contents of project
