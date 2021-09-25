@@ -1,4 +1,4 @@
-# Java Game using only the Swing GUI library with pathfinding algorthim
+# Java Game using only the Swing GUI library with pathfinding algorithm
 
 
 ### Contents of project
